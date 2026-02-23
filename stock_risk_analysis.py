@@ -24,14 +24,14 @@ matplotlib.use('Agg')
 # In[2]:
 
 
-JPMORGAN = pd.read_csv(r"C:\Users\dell\Documents\Project files\JPMorgan.csv")
+JPMORGAN = pd.read_csv("JPMorgan.csv")
 print(JPMORGAN.head())
 
 
 # In[3]:
 
 
-nvidia = pd.read_csv(r"C:\Users\dell\Documents\Project files\nvidia.csv")
+nvidia = pd.read_csv("nvidia.csv")
 print(nvidia.head())
 
 
