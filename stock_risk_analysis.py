@@ -13,7 +13,8 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-plt.savefig('chart.png')
+import matplotlib
+matplotlib.use('Agg')
 
 
 # ## 2. Load and Prepare Data
@@ -113,7 +114,7 @@ plt.axvline(JPMORGAN_var_5)
 plt.title("JPMORGAN Daily Returns Distribution")
 plt.xlabel("Daily Return")
 plt.ylabel("Frquency")
-plt.savefig('risk_chart.png')
+plt.show()
 
 
 # In[12]:
@@ -125,7 +126,7 @@ plt.axvline(nvidia_var_5)
 plt.title("Nvidia Daily Returns Distribution")
 plt.xlabel("Daily Return")
 plt.ylabel("Frequency")
-plt.savefig('risk_chart.png')
+plt.show()
 
 
 # ## 5. Portfolio Value at Risk
@@ -171,7 +172,7 @@ plt.axvline(portfolio_var_5)
 plt.title("Portfolio Daily Returns Distribution")
 plt.xlabel("Daily Return")
 plt.ylabel("Frquency")
-plt.savefig('risk_chart.png')
+plt.show()
 
 
 # In[18]:
@@ -192,3 +193,46 @@ print("portfolio VaR:", portfolio_var_5)
 # overall risk is reduced due to diversification effects.
 # 
 # This project demonstrates how Python can be used to analyze financial risk,evaluate portfolio performance, and support data-driven investment decisions.
+
+# In[19]:
+
+
+pip install pyarrow
+
+
+# In[26]:
+
+
+nvidia.to_parquet("stock_risk_analysis.parquet", index =False)
+
+
+# In[27]:
+
+
+JPMORGAN.to_parquet("stock_risk_analysis.parquet", index =False)
+
+
+# In[29]:
+
+
+import os
+print(os.path.abspath("stock_risk_analysis.parquet"))
+
+
+# In[36]:
+
+
+master_df = pd.DataFrame({
+    'Date': JPMORGAN.index,
+    'JPMORGAN_returns': JPMORGAN['returns'],
+    'nvidia_returns': nvidia['returns'],
+    'Portfolio_returns': portfolio_df['returns']
+})
+master_df.to_parquet("stock_risk_analysis.parquet")
+
+
+# In[ ]:
+
+
+
+
