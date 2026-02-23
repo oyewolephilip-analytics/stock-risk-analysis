@@ -13,6 +13,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+plt.savefig('chart.png')
 
 
 # ## 2. Load and Prepare Data
@@ -112,7 +113,7 @@ plt.axvline(JPMORGAN_var_5)
 plt.title("JPMORGAN Daily Returns Distribution")
 plt.xlabel("Daily Return")
 plt.ylabel("Frquency")
-plt.show()
+plt.savefig('risk_chart.png')
 
 
 # In[12]:
@@ -124,7 +125,7 @@ plt.axvline(nvidia_var_5)
 plt.title("Nvidia Daily Returns Distribution")
 plt.xlabel("Daily Return")
 plt.ylabel("Frequency")
-plt.show()
+plt.savefig('risk_chart.png')
 
 
 # ## 5. Portfolio Value at Risk
@@ -170,7 +171,7 @@ plt.axvline(portfolio_var_5)
 plt.title("Portfolio Daily Returns Distribution")
 plt.xlabel("Daily Return")
 plt.ylabel("Frquency")
-plt.show()
+plt.savefig('risk_chart.png')
 
 
 # In[18]:
