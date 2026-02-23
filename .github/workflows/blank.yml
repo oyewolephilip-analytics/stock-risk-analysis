@@ -20,4 +20,4 @@ jobs:
         run: pip install pandas numpy yfinance pyarrow sqlalchemy pymysql
 
       - name: Run ETL Script
-        run: python your_script_name.py # Change this to your filename
+        run: python main.py # Change this to your filename
