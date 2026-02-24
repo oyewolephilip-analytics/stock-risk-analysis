@@ -25,7 +25,8 @@ jobs:
       - name: Run ETL Script
         # REPLACE 'your_script.py' with your EXACT filename below
         run: python stock_risk_analysis.py 
-name: Commit and Push changes
+        
+      - name: Commit and Push changes
         run: |
           git config --global user.name "GitHub Action"
           git config --global user.email "action@github.com"
