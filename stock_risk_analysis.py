@@ -201,4 +201,13 @@ results = pd.DataFrame({
 # Save it to the GitHub folder
 results.to_csv("risk_summary.csv", index=False)
 
-df.to_parquet("risk summary.parquet")
+final_df = pd.DataFrame({
+    "Date": dates,
+    "JPM_Return": JPMORGAN_returns,
+    "NVDA_Return": nvidia_returns,
+    "Portfolio_Return": portfolio_returns,
+    "VaR_95": var_95,
+    "Drawdown": drawdown
+})
+
+final_df.to_parquet("portfolio_output.parquet", index=False)
