@@ -200,3 +200,5 @@ results = pd.DataFrame({
 
 # Save it to the GitHub folder
 results.to_csv("risk_summary.csv", index=False)
+
+df.to_parquet("portfolio_output.parquet")
