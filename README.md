@@ -64,6 +64,6 @@ No parametric distribution assumptions were imposed for VaR estimation, allowing
 
 ## Dashboard Preview
 
-![Dashboard Overview](screenshots/dashboard-overview.png)
+![Dashboard Overview](screenshots/dashboard-overview.png.jpeg)
 
-![Risk Metrics](screenshots/risk-metrics.png)
+![Risk Metrics](screenshots/risk-metrics.png.jpeg)
