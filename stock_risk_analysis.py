@@ -194,9 +194,14 @@ print("portfolio VaR:", portfolio_var_5)
 # 
 # This project demonstrates how Python can be used to analyze financial risk,evaluate portfolio performance, and support data-driven investment decisions.
 
-# Ensure your final results are in a DataFrame
-results_df = pd.DataFrame({'Asset': ['JPM', 'NVDA', 'Portfolio'], 'VaR': [1.7, 3.6, 2.4]})
+import datetime
 
-# This MUST match the name in your .yml file exactly
+# Create the data with a Date column
+results_df = pd.DataFrame({
+    'Date': [datetime.date.today()] * 3, 
+    'Asset': ['JPM', 'NVDA', 'Portfolio'], 
+    'VaR': [1.7, 3.6, 2.4]
+})
+
+# Save it to the main folder
 results_df.to_csv('risk_summary.csv', index=False)
-print("File saved successfully!")
