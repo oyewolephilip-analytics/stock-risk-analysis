@@ -1,77 +1,67 @@
-# stock-risk-analysis
-Historical VaR analysis using Python and pandas
-📊 Project Title
+📊 Stock Risk Analysis Research Project
 
-Historical Value at Risk (VaR) Analysis of JPMorgan and NVIDIA Stocks
+Volatility, VaR, Drawdown & Risk-Adjusted Performance
 
 ⸻
 
-🧠 Project Overview
+🔹 Project Overview
 
-This project analyzes the daily risk of two stocks — JPMorgan Chase (JPM) and NVIDIA (NVDA) — using one year of historical price data.
-The goal is to identify potential losses by applying historical simulation and Value at Risk (VaR) techniques.
+This project analyzes the risk characteristics of selected equities using quantitative financial modeling techniques.
 
-⸻
+The objective is to evaluate downside risk exposure, volatility behavior, and risk-adjusted performance using historical market data.
 
-📁 Data Description
-	•	One year of daily closing prices
-	•	Stocks analyzed:
-	•	JPMorgan Chase (JPM)
-	•	NVIDIA (NVDA)
+The analysis is implemented in Python and visualized through a Power BI dashboard.
 
 ⸻
 
-🛠 Tools & Libraries Used
-	•	Python
-	•	pandas – data cleaning and return calculation
-	•	NumPy – percentile-based risk estimation
-	•	matplotlib – risk visualization
+🔹 Research Objectives
+	•	Measure daily return behavior
+	•	Estimate historical volatility
+	•	Compute 95% Historical Simulation Value-at-Risk (VaR)
+	•	Calculate Expected Shortfall (Conditional VaR)
+	•	Analyze Maximum Drawdown
+	•	Evaluate Sharpe Ratio
+	•	Compare risk profiles across assets
 
 ⸻
 
-🔍 Methodology (explained)
-	1.	Converted daily prices into daily percentage returns
-	2.	Ranked historical returns from worst to best (historical simulation)
-	3.	Estimated 5% Value at Risk (VaR) to measure downside risk
-	4.	Combined both stocks into a 50/50 portfolio
-	5.	Calculated portfolio VaR to observe diversification effects
-	6.	Visualized return distributions using histograms
+🔹 Methodology
+	1.	Historical price data collection
+	2.	Daily log/simple return computation
+	3.	Volatility estimation (annualized)
+	4.	Historical Simulation VaR calculation
+	5.	Expected Shortfall estimation
+	6.	Cumulative return and running maximum computation
+	7.	Drawdown analysis
+	8.	Risk-adjusted performance measurement
+
+No parametric distribution assumptions were imposed for VaR estimation, allowing the model to reflect actual historical market behavior.
 
 ⸻
 
-🔑 Key Insights
-	•	NVIDIA exhibits higher volatility and downside risk compared to JPMorgan, reflected in its higher 5% Value at Risk (VaR) of 3.5%, while JPMorgan’s VaR is 1.7%, indicating more stable daily price movements.
-	•	Portfolio diversification reduces downside risk, as combining JPMorgan and NVIDIA into a single portfolio lowers the estimated VaR to 2.4%, compared to holding NVIDIA alone.
-	•	Risk reduction is achieved without eliminating growth exposure, demonstrating how diversification cushions portfolio losses by balancing high-volatility assets with more stable ones.
-	
-⸻
-
-⚠️ Limitations
-	•  Single-day risk horizon:
-       The Value at Risk (VaR) estimates in this project are based on a one-day holding period. For investors with longer holding periods, risk can accumulate over time, meaning actual losses over weeks or months may be higher than daily        VaR suggests.
-	•  Historical dependence:
-       The analysis relies on historical price movements and assumes past return patterns are indicative of future risk. Sudden structural market changes may not be captured.
-	•  Correlation stability assumption:
-       Diversification benefits assume stable correlations between assets. During periods of market stress, correlations can increase, reducing the effectiveness of diversification and leading to higher-than-expected losses.
-	•  VaR tail limitation:
-       VaR identifies a loss threshold but does not describe the severity of losses beyond that threshold, potentially understating extreme downside risk.
+🔹 Tools & Technologies
+	•	Python (pandas, numpy, scipy)
+	•	Power BI
+	•	Parquet data export for structured reporting
+	•	Git version control
 
 ⸻
 
-🚀 Future Improvements
-	•   Multi-day Value at Risk:
-        Extend the analysis by scaling VaR to longer holding periods (e.g., weekly or monthly) to reflect the investor's time horizon.
-	•   Rolling risk estimates:
-        Implement rolling VaR calculations to capture changes in volatility and risk dynamics over time.
-	•	Expected Shortfall (ES):
-        Complement VaR with Expected Shortfall to measure average losses beyond the VaR threshold, providing a more complete view of tail risk.
-	•	Correlation and stress testing:
-        Analyze how changing correlations during market stress affect portfolio risk and perform stress tests under extreme market scenarios.
-	•	Expanded portfolio analysis:
-       Include additional assets across different sectors to further evaluate diversification benefits.
+🔹 Repository Structure
+	•	src/ → Core risk modeling script
+	•	data/ → Historical price datasets
+	•	notebooks/ → Exploratory research notebook
+	•	screenshots/ → Dashboard visuals
+	•	.pbix → Power BI dashboard file
 
 ⸻
 
-📌 Conclusion
+🔹 Key Insights Explored
+	•	Sensitivity of portfolio risk to allocation weights
+	•	Comparison of volatility regimes
+	•	Tail-risk magnitude under stress conditions
+	•	Capital erosion measured through drawdown
 
-This project demonstrates how Value at Risk and diversification can be used to quantify and manage downside risk in equity portfolios. While the analysis highlights meaningful risk reduction through asset combination, it also acknowledges the limitations of single-period VaR estimates and the importance of considering correlation dynamics and tail risk in real-world applications.
+🔹 Dashboard Preview
+![Dashboard Overview](screenshots/dashboard_overview.png)
+![Risk Metrics](screenshots/risk_metrics.png)
