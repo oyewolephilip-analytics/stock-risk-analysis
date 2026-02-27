@@ -62,6 +62,8 @@ No parametric distribution assumptions were imposed for VaR estimation, allowing
 	•	Tail-risk magnitude under stress conditions
 	•	Capital erosion measured through drawdown
 
-🔹 Dashboard Preview
-![Dashboard Overview](screenshots/dashboard_overview.png)
-![Risk Metrics](screenshots/risk_metrics.png)
+## Dashboard Preview
+
+![Dashboard Overview](screenshots/dashboard-overview.png)
+
+![Risk Metrics](screenshots/risk-metrics.png)
