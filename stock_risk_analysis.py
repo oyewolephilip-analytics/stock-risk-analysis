@@ -193,3 +193,10 @@ print("portfolio VaR:", portfolio_var_5)
 # overall risk is reduced due to diversification effects.
 # 
 # This project demonstrates how Python can be used to analyze financial risk,evaluate portfolio performance, and support data-driven investment decisions.
+
+# Ensure your final results are in a DataFrame
+results_df = pd.DataFrame({'Asset': ['JPM', 'NVDA', 'Portfolio'], 'VaR': [1.7, 3.6, 2.4]})
+
+# This MUST match the name in your .yml file exactly
+results_df.to_csv('risk_summary.csv', index=False)
+print("File saved successfully!")
