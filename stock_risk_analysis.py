@@ -24,14 +24,14 @@ matplotlib.use('Agg')
 # In[2]:
 
 
-JPMORGAN = pd.read_csv('JPMorgan.csv')
+JPMORGAN = pd.read_csv('data/JPMorgan.csv')
 print(JPMORGAN.head())
 
 
 # In[3]:
 
 
-nvidia = pd.read_csv('nvidia.csv')
+nvidia = pd.read_csv('data/nvidia.csv')
 print(nvidia.head())
 
 
